@@ -16,10 +16,10 @@ exports.getcategorybyId = (req, res, next, _id) => {
 
 exports.createCategory = (req, res) => {
     const category = new Category(req.body)
-    category.save()((err, category) => {
+    category.save((err, category) => {
         if(err){
             return res.status(400).json({
-                error: "not abale to save Category in DB"
+                error: "Not abale to save Category in DB"
             })
         }
         res.json({category})
